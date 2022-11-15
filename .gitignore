@@ -1,4 +1,5 @@
 /venv
+.flaskenv
 .vscode
 __pycache__
 instance
