@@ -33,7 +33,7 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     db.init_app(app)
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, db, compare_type=True)
     api = Api(app)
 
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "jwt-secret-string")
